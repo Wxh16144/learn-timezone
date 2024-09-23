@@ -8,6 +8,7 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [react(), Pages()],
+    base: env.BASE_URL ?? '/',
     define: {
       __TIMEZONE__: JSON.stringify(env.TZ ?? 'Asia/Shanghai')
     }
