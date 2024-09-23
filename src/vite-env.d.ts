@@ -1,5 +1,6 @@
+ 
 /// <reference types="vite/client" />
-/// <reference types="vite-plugin-pages/client" />
+/// <reference types="vite-plugin-pages/client-react" />
 
 interface ImportMetaEnv {
   readonly TZ: string
@@ -8,4 +9,11 @@ interface ImportMetaEnv {
 
 interface ImportMeta {
   readonly env: ImportMetaEnv
+}
+
+declare module 'countries-db' {
+  /**
+   * any
+   */
+  export default any
 }

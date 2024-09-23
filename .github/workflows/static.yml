@@ -47,7 +47,7 @@ jobs:
 
       - name: Get repository name
         id: repo_name
-        run: echo "repo_name=$(echo $GITHUB_REPOSITORY | cut -d '/' -f 2)" >> $GITHUB_ENV
+        run: echo "repo_name=$(echo $GITHUB_REPOSITORY | cut -d '/' -f 2)" >> $GITHUB_OUTPUT
         shell: bash
 
       - name: Build Pages
