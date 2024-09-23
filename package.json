@@ -12,6 +12,7 @@
   "dependencies": {
     "ahooks": "^3.8.1",
     "antd": "5.20.6",
+    "antd-style": "^3.6.3",
     "countries-db": "^1.2.0",
     "dayjs": "^1.11.13",
     "normalize.css": "^8.0.1",

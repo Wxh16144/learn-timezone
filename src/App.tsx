@@ -2,40 +2,39 @@
 import React from "react"
 import CountriesSelect from "./components/CountriesSelect"
 import { TZProvider } from "./context"
-import { Card, Form } from "antd"
-import { useRoutes } from 'react-router-dom'
+import { Card, Divider } from "antd"
+import { useRoutes, useLocation } from 'react-router-dom'
+import { createGlobalStyle, ThemeProvider } from 'antd-style'
 
 import routes from '~react-pages'
 import Reference from "./components/Reference"
 
+const GlobalStyle = createGlobalStyle`
+  body, html {
+    background-color: ${({ theme }) => theme.colorBgContainer};
+    color: ${({ theme }) => theme.colorText};
+  }
+`
+
 function App() {
   const [tz, setTz] = React.useState<string>(__TIMEZONE__);
+  const { pathname } = useLocation()
 
   return (
-    <>
-      <Form
-        style={{
-          width: '100%',
-          position: 'fixed',
-          insetBlockEnd: 0,
-          insetInlineStart: 0
-        }}
-      >
-        <Form.Item label="Timezone">
-          <CountriesSelect
-            onTZChange={setTz}
-            placement="topLeft"
-          />
-        </Form.Item>
-      </Form>
+    <ThemeProvider themeMode="auto">
+      <GlobalStyle />
       <TZProvider value={tz}>
-        <Card style={{ margin: 18 }} title="Reference" hoverable extra={tz}>
+        <Card
+          style={{ margin: 18 }}
+          title={<CountriesSelect onTZChange={setTz} placement="bottomRight" />}
+          extra={tz}
+        >
           <Reference />
         </Card>
+        <Divider>{pathname}</Divider>
         {useRoutes(routes)}
       </TZProvider>
-
-    </>
+    </ThemeProvider>
   )
 }
 
