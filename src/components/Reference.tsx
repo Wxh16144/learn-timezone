@@ -1,19 +1,11 @@
 import React from 'react';
 import dayjs from 'dayjs';
-
-// dayjs plugin
-import utc from 'dayjs/plugin/utc';
-import timezone from 'dayjs/plugin/timezone';
-
 import { useUpdate, useRafInterval } from 'ahooks'
-
 import { useTZ } from '../context';
 import { Descriptions } from 'antd';
 
 const format = 'YYYY-MM-DD HH:mm:ss';
 
-dayjs.extend(utc);
-dayjs.extend(timezone);
 
 function Reference() {
   const tz = useTZ();
