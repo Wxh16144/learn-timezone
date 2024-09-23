@@ -26,7 +26,13 @@ function App() {
       <TZProvider value={tz}>
         <Card
           style={{ margin: 18 }}
-          title={<CountriesSelect onTZChange={setTz} placement="bottomRight" />}
+          title={
+            <CountriesSelect
+              tz={tz}
+              onTZChange={setTz}
+              placement="bottomRight"
+            />
+          }
           extra={tz}
         >
           <Reference />
