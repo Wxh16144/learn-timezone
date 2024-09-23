@@ -2,10 +2,11 @@
 import React from "react"
 import CountriesSelect from "./components/CountriesSelect"
 import { TZProvider } from "./context"
-import { Form } from "antd"
+import { Card, Form } from "antd"
 import { useRoutes } from 'react-router-dom'
 
 import routes from '~react-pages'
+import Reference from "./components/Reference"
 
 function App() {
   const [tz, setTz] = React.useState<string>(__TIMEZONE__);
@@ -28,14 +29,9 @@ function App() {
         </Form.Item>
       </Form>
       <TZProvider value={tz}>
-        <code
-          style={{
-            fontStyle: 'italic',
-            fontSize: '0.8em',
-          }}
-        >
-          timezone: {tz}
-        </code>
+        <Card style={{ margin: 18 }} title="Reference" hoverable extra={tz}>
+          <Reference />
+        </Card>
         {useRoutes(routes)}
       </TZProvider>
 
