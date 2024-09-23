@@ -2,6 +2,18 @@
 
 > 有感于最近在 [DatePicker 组件，关于时区设定的问题！](https://github.com/ant-design/ant-design/discussions/50934) 中遇到的时区问题，特此记录一下时区的相关知识。
 
+## 启动
+
+```bash
+pnpm install
+```
+
+```bash
+pnpm dev # 启动项目
+# or
+TZ=Asia/Tokyo pnpm dev # 启动项目，设置时区为东京
+```
+
 ## 参考资料
 
 - [时区 - 维基百科](https://zh.wikipedia.org/wiki/%E6%97%B6%E5%8C%BA)
