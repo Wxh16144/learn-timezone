@@ -10,10 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@date-fns/tz": "^1.1.0",
+    "@date-fns/utc": "^2.1.0",
     "ahooks": "^3.8.1",
     "antd": "5.20.6",
     "antd-style": "^3.6.3",
     "countries-db": "^1.2.0",
+    "date-fns": "^4.1.0",
     "dayjs": "^1.11.13",
     "normalize.css": "^8.0.1",
     "rc-util": "^5.43.0",
